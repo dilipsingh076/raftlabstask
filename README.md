@@ -68,3 +68,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+raft labs task flow ->
+how to approach this project.
+
+First, you need to set up your development environment with React and TypeScript. You can use create-react-app to quickly set up a new project with TypeScript. Once you have your project set up, you can start building the different components of your social media app.
+
+For user registration and login, you can use a service like Firebase Authentication to handle user authentication and secure password storage.
+
+For the news feed, you can use Firebase Realtime Database or Firestore to store and retrieve posts from the users that the logged-in user is following, sorted by date. You can use a debounce function to limit the number of requests to the database and improve performance.
+
+To create new posts, you can use Firebase Storage to store images and other media files. You can also use the Firebase Cloud Functions to tag other users in the posts.
+
+For liking and commenting on posts, you can use Firebase Realtime Database or Firestore to store and retrieve likes and comments for each post.
+
+To display user profiles, you can use Firebase Firestore to store user information and retrieve the user's posts, sorted by date.
+
+To follow and unfollow other users, you can use Firebase Firestore to store the user's following list and retrieve the posts from the users that the user is following.
+
+For data structures and algorithms, you can use a variety of tools to efficiently manage and manipulate data. For example, you can use arrays and objects to store and retrieve data, or use libraries like Lodash to perform more complex operations.
+
+To build a polished and user-friendly UI, you can use a React component library like Ant, Atlaskit, or Fluent UI to quickly create reusable components for your app. You can also use Tailwind CSS to style the app and make it responsive.
+
+Once you have built your app, you can host it on Vercel, Netlify, or similar platforms and share the links to your git repository and walkthrough video with your reviewer. In the video, make sure to demonstrate all the features of your app and explain the code you have written. Good luck with your project!
