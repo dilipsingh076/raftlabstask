@@ -3,7 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getAuth,GoogleAuthProvider} from "firebase/auth"
 import {getFirestore} from 'firebase/firestore'
-
+import firebase from "firebase/app"
+import 'firebase/storage'
 const firebaseConfig = {
   apiKey: "AIzaSyBK2lJVp53qK0MHlEhUH2cOv5Zjqmu0BxE",
   authDomain: "raftlabstask.firebaseapp.com",
@@ -22,3 +23,4 @@ const analytics = getAnalytics(app);
 export const auth = getAuth(app)
 export const db = getFirestore(app)
 export const provider = new GoogleAuthProvider();
+export const storage = firebase.storage()
