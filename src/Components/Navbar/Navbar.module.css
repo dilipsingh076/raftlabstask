@@ -1,0 +1,9 @@
+.navbar{
+    /* border:1px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+
+}

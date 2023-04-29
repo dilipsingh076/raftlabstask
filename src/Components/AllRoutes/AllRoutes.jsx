@@ -1,34 +1,18 @@
-// import React from 'react'
-// import {Routes,Route} from "react-router-dom"
-// import Login from '../Login/Login'
-// export default function AllRoutes() {
-//   return (
-//     <>
-//     <Routes>
-//         <Route exact path="/home" component={<Login/>}/>
-//         <Route path="/login" component={<Login/>} />
-//         <Route path="/signup" component={<Login/>} />
-//     </Routes>
-      
-//     </>
-//   )
-// }
-
-import React from 'react';
-import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
-import Home from '../Pages/Home';
-// import Explore from '../Pages/Explore.js';
-import UserProfile from '../Pages/UserProfile';
-
-function AppRouter() {
+import React from 'react'
+import {Routes,Route} from "react-router-dom"
+import Login from '../../Pages/login.js'
+import Home from "../../Pages/dashboard.js"
+import SignUp from '../../Pages/sign-up.js'
+export default function AllRoutes() {
   return (
+    <>
     <Routes>
-        <Route exact path="/" component={Home} />
-        {/* <Route exact path="/explore" component={Explore} /> */}
-        <Route exact path="/profile/:userId" component={UserProfile} />
-
+        <Route exact path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>} />
+        {/* <Route path="/profile" element={} /> */}
+        <Route path="/signup" element={<SignUp/>} />
     </Routes>
-  );
+      
+    </>
+  )
 }
-
-export default AppRouter;

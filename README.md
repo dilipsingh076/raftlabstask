@@ -100,3 +100,19 @@ For data structures and algorithms, you can use a variety of tools to efficientl
 To build a polished and user-friendly UI, you can use a React component library like Ant, Atlaskit, or Fluent UI to quickly create reusable components for your app. You can also use Tailwind CSS to style the app and make it responsive.
 
 Once you have built your app, you can host it on Vercel, Netlify, or similar platforms and share the links to your git repository and walkthrough video with your reviewer. In the video, make sure to demonstrate all the features of your app and explain the code you have written. Good luck with your project!
+
+
+
+
+
+
+<!-- folder structure -->
+
+src
+  // components
+  //constants
+  //context
+  //helpers
+  //lib (firebase is going to live in here)
+  // services (firebase function in here)
+  //styles
