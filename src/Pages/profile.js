@@ -1,14 +1,13 @@
-import { useParams, useHistory, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getUserByUsername } from '../services/firebase';
-import * as ROUTES from '../constants/routes';
-import Header from '../components/header';
-import UserProfile from '../components/profile';
+import * as ROUTES from '../Constants/routes';
+import Header from '../Components/header';
+import UserProfile from '../Components/profile';
 
 export default function Profile() {
   const { username } = useParams();
   const [user, setUser] = useState(null);
-  const history = useHistory();
   const navigate = useNavigate()
 
   useEffect(() => {

@@ -17,6 +17,7 @@ export default function SuggestedProfile({
 }) {
   const [followed, setFollowed] = useState(false);
   const { setActiveUser } = useContext(LoggedInUserContext)|| {};
+  console.log('setActive user',setActiveUser)
 
   async function handleFollowUser() {
     setFollowed(true);
@@ -27,7 +28,7 @@ export default function SuggestedProfile({
   }
 
   return !followed ? (
-    <div className="flex flex-row items-center align-items justify-between">
+    <div>
       <div className="flex items-center justify-between">
         <img
           className="rounded-full w-8 flex mr-3"
@@ -52,10 +53,10 @@ export default function SuggestedProfile({
   ) : null;
 }
 
-SuggestedProfile.propTypes = {
-  profileDocId: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  profileId: PropTypes.string.isRequired,
-  userId: PropTypes.string.isRequired,
-  loggedInUserDocId: PropTypes.string.isRequired
-};
+// SuggestedProfile.propTypes = {
+//   profileDocId: PropTypes.string.isRequired,
+//   username: PropTypes.string.isRequired,
+//   profileId: PropTypes.string.isRequired,
+//   userId: PropTypes.string.isRequired,
+//   loggedInUserDocId: PropTypes.string.isRequired
+// };

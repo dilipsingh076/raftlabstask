@@ -1,4 +1,4 @@
-import Loader from 'react-loader-spinner';
+import * as Loader from 'react-loader-spinner';
 
 export default function ReactLoader() {
   return (

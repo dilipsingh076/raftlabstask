@@ -1,28 +1,30 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
-// import { DEFAULT_IMAGE_PATH } from '../../constants/paths';
+import { DEFAULT_IMAGE_PATH } from '../../Constants/paths';
 
 export default function User({ username, fullName }) {
   return !username || !fullName ? (
     <Skeleton count={1} height={61} />
   ) : (
-    <Link to={`/p/${username}`} className="grid grid-cols-4 gap-4 mb-6 items-center">
-      <div className="flex items-center justify-between col-span-1">
+    <div className={'navLinkDiv'} >
+    <NavLink className={'NavLinkText'} to={`/p/${username}`}>
+      <div className='userImageDiv'>
         <img
-          className="rounded-full w-16 flex mr-3"
+        style={{width:"100%",borderRadius:"100%"}}
           src={`/images/avatars/${username}.jpg`}
           alt=""
           onError={(e) => {
-            // e.target.src = DEFAULT_IMAGE_PATH;
+            e.target.src = DEFAULT_IMAGE_PATH;
           }}
         />
       </div>
-      <div className="col-span-3">
-        <p className="font-bold text-sm">{username}</p>
-        <p className="text-sm">{fullName}</p>
+      <div className='userNameDiv' >
+        <p>{username}</p>
+        <p>{fullName}</p>
       </div>
-    </Link>
+    </NavLink>
+    </div>
   );
 }
 

@@ -7,9 +7,10 @@ export default function Sidebar() {
   const { user: { docId = '', fullName, username, userId, following } = {} } = useContext(
     LoggedInUserContext
   )|| {};
+  console.log(fullName)
 
   return (
-    <div className="p-4">
+    <div>
       <User username={username} fullName={fullName} />
       <Suggestions userId={userId} following={following} loggedInUserDocId={docId} />
     </div>

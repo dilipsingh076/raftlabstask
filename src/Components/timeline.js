@@ -17,11 +17,11 @@ export default function Timeline() {
  
 
   return (
-    <div className="container col-span-2">
+    <div>
       {following===undefined ?(
-        <Skeleton count={2} width={640} height={500} className="mb-5" />
+        <Skeleton count={2} width={640} height={500} />
       ) : following.length===0 ?(
-        <p className="flex justify-center font-bold">Follow other people to see Photos</p>
+        <p>Follow other people to see Photos</p>
       ) : photos? (
        photos.map((content) => <Post key={content.docId} content={content} />)          
       ) : null}
