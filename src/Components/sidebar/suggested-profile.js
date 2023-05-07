@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   updateLoggedInUserFollowing,
   updateFollowedUserFollowers,
@@ -28,22 +28,22 @@ export default function SuggestedProfile({
   }
 
   return !followed ? (
-    <div>
-      <div className="flex items-center justify-between">
+    <div className='suggestProfileDiv' >
+      <div>
         <img
-          className="rounded-full w-8 flex mr-3"
+          style={{height:"40px", width:"50px", borderRadius:'23px'}}
           src={`/images/avatars/${username}.jpg`}
           alt=""
           onError={(e) => {
             e.target.src = `/images/avatars/default.png`;
           }}
         />
-        <Link to={`/p/${username}`}>
-          <p className="font-bold text-sm">{username}</p>
-        </Link>
+        <NavLink className='navLinkDiv' to={`/p/${username}`}>
+          <p>{username}</p>
+        </NavLink>
       </div>
       <button
-        className="text-xs font-bold text-blue-medium"
+      className='allButton'
         type="button"
         onClick={handleFollowUser}
       >
@@ -52,11 +52,3 @@ export default function SuggestedProfile({
     </div>
   ) : null;
 }
-
-// SuggestedProfile.propTypes = {
-//   profileDocId: PropTypes.string.isRequired,
-//   username: PropTypes.string.isRequired,
-//   profileId: PropTypes.string.isRequired,
-//   userId: PropTypes.string.isRequired,
-//   loggedInUserDocId: PropTypes.string.isRequired
-// };

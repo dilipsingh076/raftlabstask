@@ -38,14 +38,14 @@ export default function Profile({ user }) {
   );
 }
 
-Profile.propTypes = {
-  user: PropTypes.shape({
-    dateCreated: PropTypes.number,
-    emailAddress: PropTypes.string,
-    followers: PropTypes.array,
-    following: PropTypes.array,
-    fullName: PropTypes.string,
-    userId: PropTypes.string,
-    username: PropTypes.string
-  })
-};
+// Profile.propTypes = {
+//   user: PropTypes.shape({
+//     dateCreated: PropTypes.number,
+//     emailAddress: PropTypes.string,
+//     followers: PropTypes.array,
+//     following: PropTypes.array,
+//     fullName: PropTypes.string,
+//     userId: PropTypes.string,
+//     username: PropTypes.string
+//   })
+// };

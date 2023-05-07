@@ -1,5 +1,18 @@
 import { firebase, FieldValue } from '../lib/firebase';
 
+
+export const handleUpload = async (file) => {
+  try {
+    const storageRef = firebase .firestore().collection('photos');
+    const fileRef = storageRef.child(file.name);
+    await fileRef.put(file);
+    const downloadURL = await fileRef.getDownloadURL();
+    return downloadURL;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Error uploading file');
+  }
+};
 export async function doesUsernameExist(username) {
   const result = await firebase
     .firestore()
@@ -152,13 +165,6 @@ export async function toggleFollow(
   profileUserId,
   followingUserId
 ) {
-  // 1st param: karl's doc id
-  // 2nd param: raphael's user id
-  // 3rd param: is the user following this profile? e.g. does karl follow raphael? (true/false)
   await updateLoggedInUserFollowing(activeUserDocId, profileUserId, isFollowingProfile);
-
-  // 1st param: karl's user id
-  // 2nd param: raphael's doc id
-  // 3rd param: is the user following this profile? e.g. does karl follow raphael? (true/false)
   await updateFollowedUserFollowers(profileDocId, followingUserId, isFollowingProfile);
 }

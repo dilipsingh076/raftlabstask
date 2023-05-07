@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
-import { Link, useHistory,NavLink, useNavigate } from 'react-router-dom';
+import {NavLink, useNavigate } from 'react-router-dom';
 import {FirebaseContext} from '../Context/firebase';
 // import * as ROUTES from '../constants/routes';
 import { doesUsernameExist } from '../services/firebase';
@@ -62,13 +62,13 @@ export default function SignUp() {
   };
 
   useEffect(() => {
-    document.title = 'Sign Up - Instagram';
+    document.title = 'Sign Up - RaftLabs';
   }, []);
 
   return (
     <div className="loginDiv">
       <div>
-        <img  style={{height:"100%", width:"100%"}} src="https://uploads-ssl.webflow.com/60d5a97381523ace9d3c87bb/60eee9be5628ed5700176501_Webp.net-resizeimage(1).png" alt="iPhone with Instagram app" />
+        <img  style={{height:"100%", width:"100%"}} src="https://uploads-ssl.webflow.com/60d5a97381523ace9d3c87bb/60eee9be5628ed5700176501_Webp.net-resizeimage(1).png" alt="" />
       </div>
       <div>
         <div className='formDiv' >

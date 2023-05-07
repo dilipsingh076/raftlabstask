@@ -107,26 +107,26 @@
 /* dashboard css */
 
 .contentDiv{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   justify-content: space-around;
   height: 100vh;
-  overflow: scroll;
   
 
 }
 .timelineDiv{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 70%;
 
 }
 
 .sidebarDiv{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 20%;
   height: 70%;
   overflow-y: hidden;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 
@@ -194,14 +194,42 @@
 
 
 .suggestionDiv{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   height: 100%;
 }
 
 
 .suggestedProfileDiv{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
 
 }
 
+
+
+
+/* suggest profile div */
+.suggestProfileDiv{
+  /* border: 1px solid red; */
+  margin-bottom: 10px;
+}
+
+
+
+
+/* actions div */
+
+.actionsDiv{
+  /* border: 1px solid red; */
+}
+
+.actionsLikedComment{
+  /* border: 1px solid black; */
+  display: flex;
+}
+
+
+.likeSvg{
+  /* border: 1px solid blue; */
+  width: 30px;
+}

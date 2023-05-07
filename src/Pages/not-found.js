@@ -3,7 +3,7 @@ import Header from '../Components/header';
 
 export default function NotFound() {
   useEffect(() => {
-    document.title = 'Not Found - Instagram';
+    document.title = 'Not Found - RaftLabs';
   }, []);
 
   return (

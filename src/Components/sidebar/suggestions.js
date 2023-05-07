@@ -27,10 +27,10 @@ export default function Suggestions({ userId, following, loggedInUserDocId }) {
     <Skeleton count={1} height={150} className="mt-5" />
   ) : profiles.length > 0 ? (
     <div className='suggestionDiv'>
-      <div  >
+      <div>
         <p className="font-bold text-gray-base">Suggestions for you</p>
       </div>
-      <div className="mt-4 grid gap-5">
+      <div className='suggestedProfileDiv'>
         {profiles.map((profile) => (
           <SuggestedProfile
             key={profile.docId}

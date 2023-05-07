@@ -5,6 +5,7 @@ import Sidebar from '../Components/sidebar';
 import useUser from "../hooks/use-user";
 import {LoggedInUserContext} from '../Context/firebase';
 
+
 export default function Dashboard({ user: loggedInUser }) {
   const { user, setActiveUser } = useUser(loggedInUser?.uid);
   useEffect(() => {

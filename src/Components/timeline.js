@@ -8,6 +8,7 @@ import Post from './post';
 export default function Timeline() {
 
   const { user } = useContext(LoggedInUserContext)|| {};
+  console.log("user timeline", user)
 
   const { user: { following } = {} } = useContext(
     LoggedInUserContext

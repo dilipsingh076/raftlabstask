@@ -4,7 +4,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import ReactLoader from './Components/loader';
 import * as ROUTES from './Constants/routes';
-import {UserContext} from './Context/firebase';
+import { UserContext } from './Context/firebase';
 import useAuthListener from './hooks/use-auth-listener';
 
 import ProtectedRoute from './helpers/protected-route';
@@ -21,37 +21,29 @@ import Dashboard from './Pages/dashboard';
 // const Profile = lazy(() => import('./Pages/profile'));
 // const NotFound = lazy(() => import('./Pages/not-found'));
 
-
-
-
-// export const DASHBOARD = '/';
-// export const LOGIN = '/login';
-// export const SIGN_UP = '/sign-up';
-// export const PROFILE = '/p/:username';
-// export const NOT_FOUND = '/not-found';
 function App() {
   const { user } = useAuthListener();
   return (
     <UserContext.Provider value={{ user }}>
-    <Routes>
-      {/* <Suspense fallback={<ReactLoader />}> */}
+      <Routes>
+        {/* <Suspense fallback={<ReactLoader />}> */}
         {/* <Switch> */}
-          <Route path={ROUTES.LOGIN} element={<Login/>} />
-          <Route path={ROUTES.SIGN_UP} element={<Signup/>} />
-          <Route path={ROUTES.PROFILE} element={<Profile/>} />
-          <Route
-              path={ROUTES.DASHBOARD}
-              element={
-                // <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact>
-                  <Dashboard user={user} />
-                // </ProtectedRoute>
-              }
-            />
-          <Route element={<NotFound/>} />
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route path={ROUTES.SIGN_UP} element={<Signup />} />
+        <Route path={ROUTES.PROFILE} element={<Profile />} />
+        <Route
+          path={ROUTES.DASHBOARD}
+          element={
+            <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact />
+          }
+        >
+          <Route index element={<Dashboard user={user} />} />
+        </Route>
+        <Route element={<NotFound />} />
         {/* </Switch> */}
-      {/* </Suspense> */}
-    </Routes>
-  </UserContext.Provider>
+        {/* </Suspense> */}
+      </Routes>
+    </UserContext.Provider>
   );
 }
 

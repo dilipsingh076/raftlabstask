@@ -27,9 +27,10 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
 
   return (
     <>
-      <div className="flex justify-between p-4">
-        <div className="flex">
+      <div className='actionsDiv' >
+        <div className="actionsLikedComment">
           <svg
+          className='likeSvg'
             onClick={handleToggleLiked}
             onKeyDown={(event) => {
               if (event.key === 'Enter') {
@@ -41,9 +42,6 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
             viewBox="0 0 24 24"
             stroke="currentColor"
             tabIndex={0}
-            className={`w-8 mr-4 select-none cursor-pointer focus:outline-none ${
-              toggleLiked ? 'fill-red text-red-primary' : 'text-black-light'
-            }`}
           >
             <path
               strokeLinecap="round"
@@ -53,13 +51,13 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
             />
           </svg>
           <svg
+           className='likeSvg'
             onClick={handleFocus}
             onKeyDown={(event) => {
               if (event.key === 'Enter') {
                 handleFocus();
               }
             }}
-            className="w-8 text-black-light select-none cursor-pointer focus:outline-none"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -75,16 +73,16 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
           </svg>
         </div>
       </div>
-      <div className="p-4 py-0">
-        <p className="font-bold">{likes === 1 ? `${likes} like` : `${likes} likes`}</p>
+      <div>
+        <p>{likes === 1 ? `${likes} like` : `${likes} likes`}</p>
       </div>
     </>
   );
 }
 
-Actions.propTypes = {
-  docId: PropTypes.string.isRequired,
-  totalLikes: PropTypes.number.isRequired,
-  likedPhoto: PropTypes.bool.isRequired,
-  handleFocus: PropTypes.func.isRequired
-};
+// Actions.propTypes = {
+//   docId: PropTypes.string.isRequired,
+//   totalLikes: PropTypes.number.isRequired,
+//   likedPhoto: PropTypes.bool.isRequired,
+//   handleFocus: PropTypes.func.isRequired
+// };
